@@ -7,6 +7,13 @@
 ;; Generic, recommended configuration options
 
 ;; ANSI color in compilation buffer
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (require 'ansi-color)
 (defun colorize-compilation-buffer ()
   (toggle-read-only)
@@ -64,7 +71,14 @@ started from a shell."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (misterioso)))
+ '(ansi-color-names-vector
+   ["#2d3743" "#ff4242" "#74af68" "#dbdb95" "#34cae2" "#008b8b" "#00ede1" "#e1e1e0"])
+ '(custom-enabled-themes (quote (misterioso-modified)))
+ '(custom-safe-themes
+   (quote
+    ("03c3cb3fde58b957fb40bc3a7dbb7e900d3ba266ac17159f7d1a1457ff5d8e72" default)))
+ '(custom-theme-directory "~/.emacs.d/themes")
+ '(default-frame-alist (quote ((alpha . 90))))
  '(desktop-path (quote ("~/.emacs.d/")))
  '(desktop-save (quote ask))
  '(desktop-save-mode t))
@@ -75,6 +89,8 @@ started from a shell."
  ;; If there is more than one, they won't work right.
  '(cursor ((t (:background "red2")))))
 
+;; 選択行に色をつける
+(global-hl-line-mode t)
 
 ;; フォントサイズ
 (set-face-attribute 'default nil :height 140)
