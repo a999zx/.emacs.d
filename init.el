@@ -97,16 +97,20 @@ started from a shell."
    (quote
     ("03c3cb3fde58b957fb40bc3a7dbb7e900d3ba266ac17159f7d1a1457ff5d8e72" default)))
  '(custom-theme-directory "~/.emacs.d/themes")
- '(default-frame-alist (quote ((alpha . 90))))
- '(desktop-path (quote ("~/.emacs.d/")))
- '(desktop-save (quote ask))
- '(desktop-save-mode t))
+ '(default-frame-alist (quote ((alpha . 90)))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(cursor ((t (:background "pink")))))
+
+;; GUIのときのみデスクトップの使用
+(when window-system
+  (custom-set-variables
+   '(desktop-path (quote ("~/.emacs.d/")))
+   '(desktop-save (quote ask))
+   '(desktop-save-mode t)))
 
 ;; 選択行に色をつける
 (global-hl-line-mode 1)
