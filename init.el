@@ -66,6 +66,25 @@ started from a shell."
 
 ;; my configuration
 
+(setq load-path (cons "~/.emacs.d/elisp" load-path))
+
+;; install-elisp
+(require 'install-elisp)
+(setq install-elisp-repository-directory "~/.emacs.d/elisp/")
+
+;; hi-line+
+(when (require 'hl-line+ nil t)  ; hl-line is also loaded
+  (global-hl-line-mode 1)
+  (defface my-hl-line-face
+    '((((class color) (background dark))  ; カラーかつ, 背景が dark ならば,
+       (:background "gray10" t))
+      (((class color) (background light)) ; カラーかつ, 背景が light ならば,
+       (:background "gray90" t))
+      (t (:bold t)))
+    "hl-line's my face")
+  (setq hl-line-face 'my-hl-line-face)
+  )
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -90,7 +109,7 @@ started from a shell."
  '(cursor ((t (:background "red2")))))
 
 ;; 選択行に色をつける
-(global-hl-line-mode t)
+(global-hl-line-mode 1)
 
 ;; フォントサイズ
 (set-face-attribute 'default nil :height 140)
