@@ -106,7 +106,7 @@ started from a shell."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(cursor ((t (:background "red2")))))
+ '(cursor ((t (:background "pink")))))
 
 ;; 選択行に色をつける
 (global-hl-line-mode 1)
